@@ -1,0 +1,18 @@
+.albums {
+  border: 2px solid red;
+  display: block;
+  background-color: rgb(255, 242, 218);
+  border-radius: 0.5em;
+}
+
+.albumsTitle {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  margin: 1em;
+  color: grey;
+}
+
+#albumid {
+  padding-right: 0.5em;
+  color: red;
+}

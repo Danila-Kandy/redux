@@ -1,0 +1,13 @@
+.users {
+  border: 2px solid red;
+  display: block;
+  background-color: rgb(255, 242, 218);
+  border-radius: 0.5em;
+}
+
+.usersName {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  margin: 1em;
+  color: grey;
+}

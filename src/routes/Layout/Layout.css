@@ -1,0 +1,47 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+.link-active {
+  font-weight: bold;
+  color: red;
+}
+
+.link-pasive {
+  color: grey;
+  text-decoration: underline;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+}
+
+.main {
+  padding: 4em;
+  flex: 1 1 auto;
+}
+
+.footer {
+  height: 15vh;
+  width: 50%;
+  position: sticky;
+  top: 100%;
+}
+
+.info {
+  margin: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  padding-top: 1em;
+  font-size: 1.3em;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
