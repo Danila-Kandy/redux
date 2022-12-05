@@ -6,26 +6,26 @@ import { fetchAlbum, fetchPhotos } from '../../store/albums/actions'
 import { fetchUser } from '../../store/users/actions'
 
 export default function Album() {
-  const { id } = useParams()
+  const { id, userId } = useParams()
   const dispatch = useDispatch()
-  const usersLoad = useSelector((state) => state.users.loading)
-  const albumsLoad = useSelector((state) => state.albums.loading)
-  const album = useSelector((state) => state.albums.activeAlbum)
+  const album = useSelector((state) => state.albums.album)
   const photos = useSelector((state) => state.albums.photos)
   const user = useSelector((state) => state.users.user)
+  const usersLoad = useSelector((state) => state.users.loading)
+  const albumsLoad = useSelector((state) => state.albums.loading)
   const error = useSelector((state) => state.albums.error)
-
+  
   useEffect(() => {
     dispatch(fetchAlbum(id))
-  }, [id])
+  }, [])
 
   useEffect(() => {
-    dispatch(fetchUser(album.userId))
-  }, [album, user])
+   dispatch(fetchUser(userId))
+  }, [])
 
   useEffect(() => {
     dispatch(fetchPhotos(id))
-  }, [id])
+  }, [])
 
   if (usersLoad || albumsLoad || !user || !album || !photos)
     return <div>Loading...</div>
@@ -37,6 +37,7 @@ export default function Album() {
         <div className="userinfo">
           <span className="title">Title:</span> {album.title}
         </div>
+
         <div className="userinfo">
           <span className="title">Creator:</span>
           <span id="name">
@@ -45,15 +46,17 @@ export default function Album() {
             </Link>
           </span>
         </div>
-        <div className="photo">
-          {photos
-            .filter((photos) => photos.albumId === album.id)
-            .map((photos) => (
-              <div key={photos.id}>
-                <img src={photos.url} alt=""></img>
-              </div>
-            ))}
-        </div>
+        {photos && (
+          <div className="photo">
+            {photos
+              .filter((photos) => photos.albumId === album.id)
+              .map((photos) => (
+                <div key={photos.id}>
+                  <img src={photos.url} alt=""></img>
+                </div>
+              ))}
+          </div>
+        )}
       </div>
     </>
   )

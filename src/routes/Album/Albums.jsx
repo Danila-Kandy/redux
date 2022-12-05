@@ -17,7 +17,7 @@ export default function Albumss() {
   return (
     <div className="albums">
       {albums.map((albums) => (
-        <Link key={albums.id} to={`/albums/${albums.id}`}>
+        <Link key={albums.id} to={`/albums/${albums.id}/${albums.userId}`}>
           <div className="albumsTitle">
             <span id="albumid">{albums.id}</span>
             {albums.title}
