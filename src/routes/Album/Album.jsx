@@ -41,7 +41,7 @@ export default function Album() {
         <div className="userinfo">
           <span className="title">Creator:</span>
           <span id="name">
-            <Link to={`/users/${album.userId}`}>
+            <Link to={`/users/${userId}`}>
               <span>{user.name}</span>
             </Link>
           </span>

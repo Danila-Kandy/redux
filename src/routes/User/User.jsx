@@ -42,7 +42,7 @@ export default function User() {
           {albums
             .filter((album) => album.userId === +id)
             .map((album) => (
-              <NavLink key={album.id} to={`/albums/${album.id}`}>
+              <NavLink key={album.id} to={`/albums/${album.id}/${id}`}>
                 <div className="albumtitle">
                   <span id="albumid">{album.id}</span>
                   {album.title}
